@@ -16,7 +16,7 @@ var personas = ["Irene", "Kalla", "Caro", "Javo"];
 // General get
 app.get("/", (req, res) => {
   var number = Math.floor(Math.random() * 3);
-  var text = "there... " + personas[number];
+  var text = "there... " + personas[number] + "?";
   res.send({ hi: text });
 });
 
