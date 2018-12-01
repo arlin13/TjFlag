@@ -15,14 +15,14 @@ var personas = ["Irene", "Kalla", "Caro", "Javo"];
 
 // General get
 app.get("/", (req, res) => {
-  var number = Math.floor(Math.random() * 3);
+  var number = Math.floor(Math.random() * 4);
   var text = "there... " + personas[number] + "?";
   res.send({ hi: text });
 });
 
 // Arlin get
 app.get("/arlin", (req, res) => {
-  res.send({ Arlin: "Que bonita eres: " + arlin.name });
+  res.send({ Arlin: "Que bonita eres " + arlin.name });
 });
 
 // Total requests get
