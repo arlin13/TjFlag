@@ -27,5 +27,5 @@ app.get("/total_requests", (req, res) => {
   res.send({ total_requests: request_number });
 });
 
-const PORT = app.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT);
