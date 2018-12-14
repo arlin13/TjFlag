@@ -24,7 +24,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 
-var personas = ["Arlin", "Irene", "Kalla", "Caro", "Javo"];
+var personas = ["Arlin <3", "Iren3e", "Ka4lla", "Car0o", "J1avo"];
 
 // General get
 app.get("/", (req, res) => {
