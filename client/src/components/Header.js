@@ -1,8 +1,20 @@
-import React, { component } from "react";
+import React, { Component } from "react";
 
 class Header extends Component {
   render() {
-    return <div>Header</div>;
+    return (
+      <nav>
+        <div className="nav-wrapper">
+          <a className="left brand-logo">Tj Flag</a>
+          <ul className="right">
+            <li>
+              {" "}
+              <a> Login with Google</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    );
   }
 }
 
