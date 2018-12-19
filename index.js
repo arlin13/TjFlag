@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const bodyParser = require("body-parser");
 const keys = require("./config/keys.js");
 require("./models/User");
 require("./services/passport");
@@ -13,6 +14,8 @@ mongoose.connect(
 
 const app = express();
 
+app.use(bodyParser.json());
+
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in milliseconds (h/m/s/ms)
@@ -23,6 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app);
 
 var personas = ["Arlin <3", "Iren3e", "Ka4lla", "Car0o", "J1avo"];
 
