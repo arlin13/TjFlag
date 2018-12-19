@@ -28,14 +28,16 @@ app.use(passport.session());
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 
-var personas = ["Arlin <3", "Iren3e", "Ka4lla", "Car0o", "J1avo"];
-
-// General get
-app.get("/", (req, res) => {
-  var number = Math.floor(Math.random() * 4);
-  var text = "there... " + personas[number] + "?";
-  res.send({ HI: text });
-});
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets (main.js or main.css file)
+  app.use(express.static("client/build"));
+  // Express will serve up the index.html file if it doesn't recognize the route
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+  app.use();
+}
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
