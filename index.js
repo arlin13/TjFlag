@@ -36,14 +36,7 @@ if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
-  app.use();
 }
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, function() {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
-});
+app.listen(PORT);
