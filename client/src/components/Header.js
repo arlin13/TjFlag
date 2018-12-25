@@ -9,11 +9,17 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return (
-          <li>
+        return [
+          <li key="1">
+            <a href="/teams">Equipos</a>
+          </li>,
+          <li key="2">
+            <a href="/stats">Estadisticas</a>
+          </li>,
+          <li key="3">
             <a href="/auth/google">Login With Google</a>
           </li>
-        );
+        ];
       default:
         return [
           <li key="1">
@@ -23,9 +29,12 @@ class Header extends Component {
             Credits: {this.props.auth.credits}
           </li>,
           <li key="3">
-            <a href="/teams">Teams</a>
+            <a href="/teams">Equipos</a>
           </li>,
           <li key="4">
+            <a href="/stats">Estadisticas</a>
+          </li>,
+          <li key="5">
             <a href="/api/logout">Logout</a>
           </li>
         ];
@@ -54,61 +63,3 @@ function mapStateToProps({ auth }) {
 }
 
 export default connect(mapStateToProps)(Header);
-
-// import React, { Component } from "react";
-// import { connect } from "react-redux";
-// import { Link } from "react-router-dom";
-//
-// class Header extends Component {
-//   renderContent() {
-//     console.log("Im inside of class Header -> renderContent");
-//     console.log("Value of props");
-//     console.log(this.props);
-//     switch (this.props.auth) {
-//       case null:
-//         return;
-//       case false:
-//         return (
-//           <li>
-//             <a href="/auth/google">Log in with Google</a>
-//           </li>
-//         );
-//       case true:
-//         return (
-//           <li>
-//             <a href="/api/logout">Logout</a>
-//           </li>
-//         );
-//       default:
-//         return <li> Not sure what is happening</li>;
-//     }
-//   }
-//   render() {
-//     console.log(this.props);
-//     return (
-//       <nav>
-//         <div className="nav-wrapper">
-//           <Link
-//             to={this.props.auth ? "/surveys" : "/"}
-//             className="left brand-logo"
-//             href=""
-//           >
-//             Tj Flag
-//           </Link>
-//           <ul className="right">{this.renderContent()}</ul>
-//         </div>
-//       </nav>
-//     );
-//   }
-// }
-//
-// // function mapStateToProps({ auth }) {
-// //   return { auth };
-// // }
-// //
-// // export default connect(mapStateToProps)(Header);
-//
-// const mapStateToProps = ({ auth }) => {
-//   return { auth };
-// };
-// export default connect(mapStateToProps)(Header);
