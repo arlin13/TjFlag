@@ -7,6 +7,7 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Teams from "./Teams";
 import Stats from "./Stats";
+import Footer from "./Footer";
 const Dashboard = () => <h2> Dashboard </h2>;
 const SurveyNew = () => <h2> SurveyNew </h2>;
 
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/surveys/new" component={SurveyNew} />
             <Route path="/teams" component={Teams} />
             <Route path="/stats" component={Stats} />
+            <Footer />
           </div>
         </BrowserRouter>
       </div>

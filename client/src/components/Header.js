@@ -14,9 +14,12 @@ class Header extends Component {
             <a href="/teams">Equipos</a>
           </li>,
           <li key="2">
-            <a href="/stats">Estadisticas</a>
+            <a href="/players">Jugadores</a>
           </li>,
           <li key="3">
+            <a href="/stats">Estadisticas</a>
+          </li>,
+          <li key="4">
             <a href="/auth/google">Login With Google</a>
           </li>
         ];
@@ -32,9 +35,12 @@ class Header extends Component {
             <a href="/teams">Equipos</a>
           </li>,
           <li key="4">
-            <a href="/stats">Estadisticas</a>
+            <a href="/players">Jugadores</a>
           </li>,
           <li key="5">
+            <a href="/stats">Estadisticas</a>
+          </li>,
+          <li key="6">
             <a href="/api/logout">Logout</a>
           </li>
         ];
