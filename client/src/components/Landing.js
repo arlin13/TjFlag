@@ -4,9 +4,11 @@ const Landing = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1> Tj flag! </h1>
-      <p>Torneo de flag en</p>
-      <p>Tijuana, Ensenada y Mexicali</p>
-      <p>Categoria abierta: Femenil - Varonil</p>
+      <div className="row">
+        <div className="col s4">Tijuana</div>
+        <div className="col s4">Ensenada</div>
+        <div className="col s4">Mexicali</div>
+      </div>
     </div>
   );
 };

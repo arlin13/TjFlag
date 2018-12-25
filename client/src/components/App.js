@@ -8,7 +8,7 @@ import Landing from "./Landing";
 import Teams from "./Teams";
 import Stats from "./Stats";
 import Footer from "./Footer";
-const Dashboard = () => <h2> Dashboard </h2>;
+import Dashboard from "./Dashboard";
 const SurveyNew = () => <h2> SurveyNew </h2>;
 
 class App extends Component {
