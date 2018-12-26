@@ -9,7 +9,7 @@ import Teams from "./Teams";
 import Stats from "./Stats";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
-const SurveyNew = () => <h2> SurveyNew </h2>;
+import SurveyNew from "./surveys/SurveyNew";
 
 class App extends Component {
   componentDidMount() {
