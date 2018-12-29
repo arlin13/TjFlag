@@ -46,24 +46,19 @@ class SurveyForm extends Component {
   }
 }
 
-// class SurveyForm extends Component {
-//   renderFields() {
-//     return _.map(FIELDS, ({ label, name }) => {
-//       return (
-//         <Field
-//           key={name}
-//           component={SurveyField}
-//           type="text"
-//           label={label}
-//           name={name}
-//         />
-//       );
-//     });
-//   }
-//
+function validate(values) {
+  const errors = {};
 
-// }
+  _.each(FIELDS, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = "You must provice a " + name;
+    }
+  });
+
+  return errors;
+}
 
 export default reduxForm({
+  validate,
   form: "surveyForm"
 })(SurveyForm);
