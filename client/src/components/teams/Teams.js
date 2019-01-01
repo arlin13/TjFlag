@@ -1,9 +1,11 @@
 import React from "react";
+import TeamList from "./TeamList";
 
 const Teams = () => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Equipos</h1>
+    <div>
+      <h5>Equipos:</h5>
+      <TeamList />
     </div>
   );
 };

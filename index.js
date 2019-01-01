@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const keys = require("./config/keys.js");
 require("./models/User");
 require("./models/Survey");
+require("./models/Team");
 require("./services/passport");
 
 mongoose.connect(

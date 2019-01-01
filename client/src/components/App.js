@@ -5,7 +5,9 @@ import * as actions from "../actions";
 
 import Header from "./Header";
 import Landing from "./Landing";
-import Teams from "./Teams";
+import Teams from "./teams/Teams";
+import TeamDetails from "./teams/TeamDetails";
+import Players from "./Players";
 import Stats from "./Stats";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
@@ -25,7 +27,9 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
-            <Route path="/teams" component={Teams} />
+            <Route exact path="/teams" component={Teams} />
+            <Route path="/teams/:teamName" component={TeamDetails} />
+            <Route path="/players" component={Players} />
             <Route path="/stats" component={Stats} />
             <Footer />
           </div>
