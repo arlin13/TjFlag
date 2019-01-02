@@ -1,10 +1,31 @@
 import React, { Component } from "react";
-import { reduxForm } from "redux-form";
+import { connect } from "react-redux";
+import { fetchTeams } from "../../actions";
 
 class TeamDetails extends Component {
+  componentDidMount() {
+    this.props.fetchTeams();
+  }
+
+  renderTeams() {
+    return null;
+  }
+
   render() {
-    return <h1>Team details</h1>;
+    return (
+      <div>
+        <h4>Team details</h4>
+        // <div>{this.renderTeams()}</div>
+      </div>
+    );
   }
 }
 
-export default TeamDetails;
+function mapStateToProps({ team }) {
+  return team;
+}
+
+export default connect(
+  mapStateToProps,
+  { fetchTeams }
+)(TeamDetails);

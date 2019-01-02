@@ -23,6 +23,12 @@ export const fetchSurveys = () => async dispatch => {
   dispatch({ type: FETCH_SURVEYS, payload: res.data });
 };
 
+export const submitTeam = (values, history) => async dispatch => {
+  const res = await axios.post("/api/teams", values);
+  history.push("/teams");
+  dispatch({ type: FETCH_USER, payload: res.data });
+};
+
 export const fetchTeams = () => async dispatch => {
   const res = await axios.get("/api/teams");
   dispatch({ type: FETCH_TEAMS, payload: res.data });

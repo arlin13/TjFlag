@@ -12,7 +12,7 @@ class TeamList extends Component {
     return this.props.teams.map(team => {
       return (
         <a
-          href={"/team/" + team.name}
+          href={"/teams/" + team.name}
           className="collection-item"
           key={team.name}
         >

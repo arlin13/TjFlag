@@ -6,7 +6,8 @@ class TeamForm extends Component {
   renderFields() {
     return (
       <div>
-        <label>Nombre del equipo: </label>
+        <h5>Agregar equipo</h5>
+        <label>Nombre: </label>
         <input type="text" />
       </div>
     );
@@ -14,16 +15,19 @@ class TeamForm extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ margin: "10px 0px" }}>
         <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
           {this.renderFields()}
-          <Link to="/teams" className="red btn-flat white-text">
-            Cancel
+          <Link to="/teams" className="red btn-flat btn-small white-text">
+            Cancelar
             <i className="material-icons right">cancel</i>
           </Link>
-          <button type="submit" className="teal btn-flat right white-text">
-            Save
-            <i className="material-icons right">save</i>
+          <button
+            type="submit"
+            className="teal btn-flat btn-small right white-text"
+          >
+            Siguiente
+            <i className="material-icons right">done</i>
           </button>
         </form>
       </div>
@@ -31,4 +35,6 @@ class TeamForm extends Component {
   }
 }
 
-export default reduxForm({ form: "teamForm" })(TeamForm);
+export default reduxForm({ form: "teamForm", destroyOnUnmount: false })(
+  TeamForm
+);

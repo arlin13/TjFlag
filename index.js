@@ -15,6 +15,7 @@ mongoose.connect(
 );
 
 const app = express();
+const router = express.Router();
 
 app.use(bodyParser.json());
 
@@ -26,6 +27,7 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+app.use("", router);
 
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
