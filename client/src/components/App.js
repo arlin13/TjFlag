@@ -7,7 +7,8 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Teams from "./teams/Teams";
 import TeamNew from "./teams/TeamNew";
-import Players from "./Players";
+import Players from "./players/Players";
+import PlayerNew from "./players/PlayerNew";
 import Stats from "./Stats";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
@@ -29,7 +30,8 @@ class App extends Component {
             <Route path="/surveys/new" component={SurveyNew} />
             <Route exact path="/teams" component={Teams} />
             <Route exact path="/teams/new" component={TeamNew} />
-            <Route path="/players" component={Players} />
+            <Route exact path="/players" component={Players} />
+            <Route exact path="/players/new" component={PlayerNew} />
             <Route path="/stats" component={Stats} />
             <Footer />
           </div>

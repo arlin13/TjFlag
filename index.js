@@ -7,6 +7,7 @@ const keys = require("./config/keys.js");
 require("./models/User");
 require("./models/Survey");
 require("./models/Team");
+require("./models/Player");
 require("./services/passport");
 
 mongoose.connect(
@@ -33,6 +34,7 @@ require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
 require("./routes/surveyRoutes")(app);
 require("./routes/teamRoutes")(app);
+require("./routes/playerRoutes")(app);
 require("./routes/statsRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
