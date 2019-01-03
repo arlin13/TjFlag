@@ -7,14 +7,6 @@ class PlayerList extends Component {
     this.props.fetchPlayers();
   }
 
-  // <a
-  //   href={"/players/" + player.name}
-  //   className="collection-item"
-  //   key={player.name}
-  // >
-  //   {player.name}
-  // </a>
-
   renderPlayers() {
     return this.props.players.map(player => {
       return (
@@ -23,11 +15,11 @@ class PlayerList extends Component {
             <span className="card-title">
               {player.name} {player.lastName}
             </span>
-            <p>Equipo: "Pendiente"</p>
+            <span className="left">Equipo: "Pendiente"</span>
+            <span className="right"># {player.number}</span>
           </div>
           <div className="card-action">
-            <button># {player.number}</button>
-            <button className="right">Ver detalles</button>
+            <a>Ver detalles</a>
           </div>
         </div>
       );
