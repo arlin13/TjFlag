@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import "materialize-css/dist/css/materialize.min.css";
+import M from "materialize-css";
 
 import Header from "./Header";
 import Landing from "./Landing";
@@ -40,6 +42,19 @@ class App extends Component {
     );
   }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  var sideNavElems = document.querySelectorAll(".sidenav");
+  var datePickerElems = document.querySelectorAll(".datepicker");
+  var autocompleteElems = document.querySelectorAll(".autocomplete");
+  M.Datepicker.init(datePickerElems, {});
+  M.Autocomplete.init(autocompleteElems, {});
+  M.Sidenav.init(sideNavElems, {
+    inDuration: 350,
+    outDuration: 350,
+    edge: "left"
+  });
+});
 
 export default connect(
   null,

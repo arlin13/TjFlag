@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 // import Payments from "./Payments";
-import "materialize-css/dist/css/materialize.min.css";
-import M from "materialize-css";
 
 class Header extends Component {
   renderContent() {
@@ -75,16 +73,5 @@ class Header extends Component {
 function mapStateToProps({ auth }) {
   return { auth };
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  var sideNavElems = document.querySelectorAll(".sidenav");
-  var datePickerElems = document.querySelectorAll(".datepicker");
-  M.Datepicker.init(datePickerElems, {});
-  M.Sidenav.init(sideNavElems, {
-    inDuration: 350,
-    outDuration: 350,
-    edge: "left"
-  });
-});
 
 export default connect(mapStateToProps)(Header);

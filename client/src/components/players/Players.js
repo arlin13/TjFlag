@@ -15,6 +15,11 @@ const Players = () => {
           </Link>
         </div>
       </div>
+      <div className="input-field col s12">
+        <i className="material-icons prefix">search</i>
+        <input type="text" id="autocomplete-input" className="autocomplete" />
+        <label for="autocomplete-input">Buscar jugador</label>
+      </div>
       <div className="col s12">
         <h5>Jugadores:</h5>
       </div>

@@ -28,7 +28,7 @@ class PlayerList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col s12">
         <ul className="collection">{this.renderPlayers()}</ul>
       </div>
     );
