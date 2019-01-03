@@ -7,16 +7,29 @@ class PlayerList extends Component {
     this.props.fetchPlayers();
   }
 
+  // <a
+  //   href={"/players/" + player.name}
+  //   className="collection-item"
+  //   key={player.name}
+  // >
+  //   {player.name}
+  // </a>
+
   renderPlayers() {
     return this.props.players.map(player => {
       return (
-        <a
-          href={"/players/" + player.name}
-          className="collection-item"
-          key={player.name}
-        >
-          {player.name}
-        </a>
+        <div className="card blue-grey darken-1" key={player._id}>
+          <div className="card-content white-text">
+            <span className="card-title">
+              {player.name} {player.lastName}
+            </span>
+            <p>Equipo: "Pendiente"</p>
+          </div>
+          <div className="card-action">
+            <button># {player.number}</button>
+            <button className="right">Ver detalles</button>
+          </div>
+        </div>
       );
     });
   }

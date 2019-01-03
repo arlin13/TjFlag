@@ -1,9 +1,9 @@
 export default [
-  { label: "Nombre", name: "name" },
-  { label: "Apellido", name: "lastName" },
-  { label: "Fecha de nacimiento", name: "dateOfBirth" },
-  { label: "Genero", name: "gender" },
-  { label: "Numero", name: "number" },
-  { label: "Division", name: "division" },
-  { label: "Activo", name: "isActive" }
+  { label: "Nombre", name: "name", type: "text" },
+  { label: "Apellido", name: "lastName", type: "text" },
+  { label: "Fecha de nacimiento", name: "dateOfBirth", type: "datetime" },
+  { label: "Genero", name: "gender", type: "text" },
+  { label: "Numero", name: "number", type: "text" },
+  { label: "Division", name: "division", type: "text" },
+  { label: "Activo", name: "isActive", type: "text" }
 ];

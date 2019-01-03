@@ -7,12 +7,13 @@ import formFields from "./formFields";
 
 class PlayerForm extends Component {
   renderFields() {
-    return _.map(formFields, ({ label, name }) => {
+    return _.map(formFields, ({ label, name, type }) => {
       return (
         <Field
           key={name}
           component={PlayerField}
           type="text"
+          className={type}
           label={label}
           name={name}
         />
@@ -23,6 +24,9 @@ class PlayerForm extends Component {
   render() {
     return (
       <div style={{ margin: "10px 0px" }}>
+        <p>Datepicker</p>
+        <input type="text" class="datepicker" />
+
         <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
           {this.renderFields()}
           <Link to="/players" className="red btn-flat btn-small white-text">

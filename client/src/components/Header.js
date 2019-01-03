@@ -77,8 +77,10 @@ function mapStateToProps({ auth }) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  var elems = document.querySelectorAll(".sidenav");
-  M.Sidenav.init(elems, {
+  var sideNavElems = document.querySelectorAll(".sidenav");
+  var datePickerElems = document.querySelectorAll(".datepicker");
+  M.Datepicker.init(datePickerElems, {});
+  M.Sidenav.init(sideNavElems, {
     inDuration: 350,
     outDuration: 350,
     edge: "left"
