@@ -1,16 +1,23 @@
+import _ from "lodash";
 import React, { Component } from "react";
-import { reduxForm } from "redux-form";
+import { reduxForm, Field } from "redux-form";
+import TeamField from "./TeamField";
 import { Link } from "react-router-dom";
+import formFields from "./formFields";
 
 class TeamForm extends Component {
   renderFields() {
-    return (
-      <div>
-        <h5>Agregar equipo</h5>
-        <label>Nombre: </label>
-        <input type="text" />
-      </div>
-    );
+    return _.map(formFields, ({ label, name }) => {
+      return (
+        <Field
+          key={name}
+          component={TeamField}
+          type="text"
+          label={label}
+          name={name}
+        />
+      );
+    });
   }
 
   render() {
@@ -35,6 +42,20 @@ class TeamForm extends Component {
   }
 }
 
-export default reduxForm({ form: "teamForm", destroyOnUnmount: false })(
-  TeamForm
-);
+function validate(values) {
+  const errors = {};
+
+  _.each(formFields, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = "You must provide a value";
+    }
+  });
+
+  return errors;
+}
+
+export default reduxForm({
+  validate,
+  form: "teamForm",
+  destroyOnUnmount: false
+})(TeamForm);
