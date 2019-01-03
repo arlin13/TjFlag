@@ -17,8 +17,9 @@ module.exports = app => {
     res.send(teams);
   });
 
-  app.get("/api/teams/:teamname", function(req, res) {
-    console.log("api/teams/teamname route (pls work 2)");
+  app.get("/api/teams/:teamname", async (req, res) => {
+    console.log("api/teams/teamname GET route");
+    const team = await Team.find({ name: req.params.teamname });
     res.send(req.params);
   });
 

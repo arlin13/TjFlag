@@ -18,6 +18,11 @@ module.exports = app => {
     res.send(surveys);
   });
 
+  app.get("/api/surveys/:surveyId", (req, res) => {
+    console.log("Inside of get surveys -> by surveyId route!!!");
+    res.send("Inside of get surveys -> by surveyId route!!!");
+  });
+
   app.get("/api/surveys/:surveyId/:choice", (req, res) => {
     res.send("Thanks for voting!");
   });

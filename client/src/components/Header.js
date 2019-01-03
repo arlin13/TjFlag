@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+const logo_100px = require("../images/Logo_TJFLAG_Color_100px.png");
+
 // import Payments from "./Payments";
 
 class Header extends Component {
@@ -49,13 +51,10 @@ class Header extends Component {
 
   render() {
     return (
-      <nav className="nav-extended">
+      <nav className="nav-extended" style={{ padding: "10px" }}>
         <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? "/dashboard" : "/"}
-            className="brand-logo"
-          >
-            Tj Flag
+          <Link to={"/"} className="brand-logo">
+            <img className="responsive-img" src={logo_100px} alt="logo" />
           </Link>
           <a href="#" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>

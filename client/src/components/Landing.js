@@ -1,11 +1,17 @@
 import React from "react";
-const logo_200px = require("../images/Logo_TJFLAG_Color_200px.png");
+const img_el_flag_nos_une = require("../images/ElFlagNosUne.jpg");
 
 const Landing = () => {
   return (
-    <div style={{ textAlign: "center" }}>
-      <img src={logo_200px} style={{ padding: "20px" }} alt="logo" />
+    <div style={{ textAlign: "center", padding: "25px" }}>
       <div className="row">
+        <div className="col s12" style={{ padding: "10px" }}>
+          <img
+            className="responsive-img"
+            src={img_el_flag_nos_une}
+            alt="logo"
+          />
+        </div>
         <div className="col s4">Tijuana</div>
         <div className="col s4">Ensenada</div>
         <div className="col s4">Mexicali</div>
