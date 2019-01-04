@@ -12,10 +12,23 @@ const Landing = () => {
             alt="logo"
           />
         </div>
-        <div className="col s4">Tijuana</div>
-        <div className="col s4">Ensenada</div>
-        <div className="col s4">Mexicali</div>
-        <div className="divider" />
+        <div className="col s4">
+          <div className="divider" />
+          <a style={{ color: "#F67645" }} href="/games">
+            TIJUANA
+          </a>
+          <div className="divider" />
+        </div>
+        <div className="col s4">
+          <a style={{ color: "#F67645" }} href="/games">
+            ENSENADA
+          </a>
+        </div>
+        <div className="col s4">
+          <a style={{ color: "#F67645" }} href="/games">
+            MEXICALI
+          </a>
+        </div>
       </div>
     </div>
   );
