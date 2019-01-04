@@ -71,6 +71,9 @@ class Header extends Component {
             <i className="material-icons">menu</i>
           </a>
           <ul className="right hide-on-med-and-down">
+            <li key="games">
+              <a href="/games">Proximos juegos</a>
+            </li>
             <li key="teams">
               <a href="/teams">Equipos</a>
             </li>
@@ -84,7 +87,7 @@ class Header extends Component {
           </ul>
           <ul className="sidenav #e57373 red lighten-2" id="mobile-demo">
             {this.renderSideNavTopContent()}
-            <li key="divider">
+            <li key="divider1">
               <div className="divider" />
             </li>
             <li key="teams">
@@ -95,6 +98,29 @@ class Header extends Component {
             </li>
             <li key="stats">
               <a href="/stats">Estadisticas</a>
+            </li>
+            <li key="divider2">
+              <div className="divider" />
+            </li>
+            <li key="games">
+              <ul className="collapsible">
+                <li>
+                  <div className="collapsible-header">Proximos juegos</div>
+                  <div className="collapsible-body">
+                    <ul className="#e57373 red lighten-2">
+                      <li>
+                        <a href="/games">Tijuana</a>
+                      </li>
+                      <li>
+                        <a href="/games">Ensenada</a>
+                      </li>
+                      <li>
+                        <a href="/games">Mexicali</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

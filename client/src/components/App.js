@@ -46,8 +46,10 @@ class App extends Component {
 document.addEventListener("DOMContentLoaded", function() {
   var sideNavElems = document.querySelectorAll(".sidenav");
   var datePickerElems = document.querySelectorAll(".datepicker");
+  var collapsibleElems = document.querySelectorAll(".collapsible");
   var autocompleteElems = document.querySelectorAll(".autocomplete");
   M.Datepicker.init(datePickerElems, {});
+  M.Collapsible.init(collapsibleElems, {});
   M.Autocomplete.init(autocompleteElems, {});
   M.Sidenav.init(sideNavElems, {
     inDuration: 350,

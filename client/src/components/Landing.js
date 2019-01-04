@@ -15,6 +15,7 @@ const Landing = () => {
         <div className="col s4">Tijuana</div>
         <div className="col s4">Ensenada</div>
         <div className="col s4">Mexicali</div>
+        <div className="divider" />
       </div>
     </div>
   );
