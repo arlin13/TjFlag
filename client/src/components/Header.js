@@ -2,47 +2,58 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 const logo_100px = require("../images/Logo_TJFLAG_Color_100px.png");
-
-// import Payments from "./Payments";
+const football_300px = require("../images/Football_300px.jpg");
 
 class Header extends Component {
+  renderTopContent() {
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return [
+          <li key="dividerTop">
+            <div className="divider" />
+          </li>,
+          <li key="tjFlag">
+            <div className="center bold">TJ Flag</div>
+          </li>
+        ];
+      default:
+        return [
+          <li key="user-view">
+            <div className="user-view">
+              <div className="background">
+                <img src={football_300px} />
+              </div>
+              <a href="#user">
+                <img className="circle" src="images/yuna.jpg" />
+              </a>
+              <a href="#name">
+                <span className="white-text name">Arlin Grijlba</span>
+              </a>
+              <a href="#email">
+                <span className="white-text email">
+                  arlin.grijalba@gmail.com
+                </span>
+              </a>
+            </div>
+          </li>
+        ];
+    }
+  }
   renderContent() {
     switch (this.props.auth) {
       case null:
         return;
       case false:
         return [
-          <li key="1">
-            <a href="/teams">Equipos</a>
-          </li>,
-          <li key="2">
-            <a href="/players">Jugadores</a>
-          </li>,
-          <li key="3">
-            <a href="/stats">Estadisticas</a>
-          </li>,
-          <li key="4">
+          <li key="logIn">
             <a href="/auth/google">Login With Google</a>
           </li>
         ];
       default:
         return [
-          // <li key="1">
-          //   <Payments />
-          // </li>,
-          // <li key="2" style={{ margin: "0 20px" }}>
-          //   Credits: {this.props.auth.credits}
-          // </li>,
-          <li key="3">
-            <a href="/teams">Equipos</a>
-          </li>,
-          <li key="4">
-            <a href="/players">Jugadores</a>
-          </li>,
-          <li key="5">
-            <a href="/stats">Estadisticas</a>
-          </li>,
-          <li key="6">
+          <li key="logOut">
             <a href="/api/logout">Logout</a>
           </li>
         ];
@@ -60,7 +71,20 @@ class Header extends Component {
             <i className="material-icons">menu</i>
           </a>
           <ul className="right hide-on-med-and-down">{this.renderContent()}</ul>
-          <ul className="sidenav" id="mobile-demo">
+          <ul className="sidenav #e57373 red lighten-2" id="mobile-demo">
+            {this.renderTopContent()}
+            <li key="divider">
+              <div className="divider" />
+            </li>
+            <li key="teams">
+              <a href="/teams">Equipos</a>
+            </li>
+            <li key="players">
+              <a href="/players">Jugadores</a>
+            </li>
+            <li key="stats">
+              <a href="/stats">Estadisticas</a>
+            </li>
             {this.renderContent()}
           </ul>
         </div>
