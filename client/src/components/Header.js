@@ -5,7 +5,7 @@ const logo_100px = require("../images/Logo_TJFLAG_Color_100px.png");
 const football_300px = require("../images/Football_300px.jpg");
 
 class Header extends Component {
-  renderTopContent() {
+  renderSideNavTopContent() {
     switch (this.props.auth) {
       case null:
         return;
@@ -41,7 +41,7 @@ class Header extends Component {
         ];
     }
   }
-  renderContent() {
+  renderTopNavContent() {
     switch (this.props.auth) {
       case null:
         return;
@@ -70,9 +70,20 @@ class Header extends Component {
           <a href="#" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
-          <ul className="right hide-on-med-and-down">{this.renderContent()}</ul>
+          <ul className="right hide-on-med-and-down">
+            <li key="teams">
+              <a href="/teams">Equipos</a>
+            </li>
+            <li key="players">
+              <a href="/players">Jugadores</a>
+            </li>
+            <li key="stats">
+              <a href="/stats">Estadisticas</a>
+            </li>
+            {this.renderTopNavContent()}
+          </ul>
           <ul className="sidenav #e57373 red lighten-2" id="mobile-demo">
-            {this.renderTopContent()}
+            {this.renderSideNavTopContent()}
             <li key="divider">
               <div className="divider" />
             </li>
@@ -85,7 +96,6 @@ class Header extends Component {
             <li key="stats">
               <a href="/stats">Estadisticas</a>
             </li>
-            {this.renderContent()}
           </ul>
         </div>
       </nav>
