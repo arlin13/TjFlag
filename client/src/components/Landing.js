@@ -13,11 +13,9 @@ const Landing = () => {
           />
         </div>
         <div className="col s4">
-          <div className="divider" />
           <a style={{ color: "#F67645" }} href="/games">
             TIJUANA
           </a>
-          <div className="divider" />
         </div>
         <div className="col s4">
           <a style={{ color: "#F67645" }} href="/games">
