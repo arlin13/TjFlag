@@ -7,15 +7,15 @@ import formFields from "./formFields";
 
 class PlayerForm extends Component {
   renderFields() {
-    return _.map(formFields, ({ label, name, type }) => {
+    return _.map(formFields, ({ label, name, type, size }) => {
       return (
         <Field
           key={name}
           component={PlayerField}
           type="text"
-          className={type}
           label={label}
           name={name}
+          size={size}
         />
       );
     });
@@ -24,11 +24,8 @@ class PlayerForm extends Component {
   render() {
     return (
       <div style={{ margin: "10px 0px" }}>
-        <p>Datepicker</p>
-        <input type="text" class="datepicker" />
-
         <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
-          {this.renderFields()}
+          <div className="row">{this.renderFields()}</div>{" "}
           <Link to="/players" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>
@@ -49,9 +46,9 @@ class PlayerForm extends Component {
 function validate(values) {
   const errors = {};
 
-  _.each(formFields, ({ name }) => {
+  _.each(formFields, ({ name, label }) => {
     if (!values[name]) {
-      errors[name] = "You must provide a value";
+      errors[name] = label + " es requerido";
     }
   });
 

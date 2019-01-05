@@ -1,13 +1,17 @@
 import React from "react";
 
-export default ({ input, label, meta: { error, touched } }) => {
+export default ({ input, label, size, meta: { error, touched } }) => {
   return (
-    <div>
-      <label>{label}</label>
-      <input type="text" {...input} style={{ marginBottom: "5px" }} />
-      <div className="red-text" style={{ marginBottom: "20px" }}>
+    <div className={size}>
+      <input
+        type="text"
+        {...input}
+        style={{ marginBottom: "5px", color: "white" }}
+      />
+      <div style={{ color: "red", visibility: { error } }}>
         {touched && error}
       </div>
+      <label style={{ visibility: { error } }}>{label}</label>
     </div>
   );
 };
