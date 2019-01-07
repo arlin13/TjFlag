@@ -48,7 +48,7 @@ function validate(values) {
 
   _.each(formFields, ({ name, label }) => {
     if (!values[name]) {
-      errors[name] = label + " es requerido";
+      errors[name] = "Requerido";
     }
   });
 

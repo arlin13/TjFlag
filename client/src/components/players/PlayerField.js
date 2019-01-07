@@ -11,7 +11,7 @@ export default ({ input, label, size, meta: { error, touched } }) => {
       <div style={{ color: "red", visibility: { error } }}>
         {touched && error}
       </div>
-      <label style={{ visibility: { error } }}>{label}</label>
+      <label style={{ visibility: { touched } }}>{label}</label>
     </div>
   );
 };
