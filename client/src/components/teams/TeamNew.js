@@ -21,7 +21,7 @@ class TeamNew extends Component {
   }
 
   render() {
-    return <div>{this.renderContent()}</div>;
+    return <div className="container">{this.renderContent()}</div>;
   }
 }
 

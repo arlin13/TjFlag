@@ -23,9 +23,9 @@ class PlayerForm extends Component {
 
   render() {
     return (
-      <div style={{ margin: "10px 0px" }}>
+      <div style={{ margin: "20px 0px" }}>
         <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
-          <div className="row">{this.renderFields()}</div>{" "}
+          <div className="row">{this.renderFields()}</div>
           <Link to="/players" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>

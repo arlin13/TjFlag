@@ -23,19 +23,10 @@ class Header extends Component {
           <li key="user-view">
             <div className="user-view">
               <div className="background">
-                <img src={football_300px} />
+                <img alt="football_300px" src={football_300px} />
               </div>
-              <a href="#user">
-                <img className="circle" src="images/yuna.jpg" />
-              </a>
-              <a href="#name">
-                <span className="white-text name">Arlin Grijlba</span>
-              </a>
-              <a href="#email">
-                <span className="white-text email">
-                  arlin.grijalba@gmail.com
-                </span>
-              </a>
+              <span className="white-text name">Arlin Grijlba</span>
+              <span className="white-text email">arlin.grijalba@gmail.com</span>
             </div>
           </li>
         ];
@@ -67,7 +58,7 @@ class Header extends Component {
           <Link to={"/"} className="brand-logo">
             <img className="responsive-img" src={logo_100px} alt="logo" />
           </Link>
-          <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+          <a href="/" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
           <ul className="right hide-on-med-and-down">

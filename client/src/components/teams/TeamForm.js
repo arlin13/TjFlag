@@ -22,7 +22,7 @@ class TeamForm extends Component {
 
   render() {
     return (
-      <div style={{ margin: "10px 0px" }}>
+      <div style={{ margin: "20px 0px" }}>
         <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
           {this.renderFields()}
           <Link to="/teams" className="red btn-flat btn-small white-text">

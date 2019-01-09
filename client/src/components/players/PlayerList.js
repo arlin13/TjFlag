@@ -19,9 +19,24 @@ class PlayerList extends Component {
             <span className="right"># {player.number}</span>
           </div>
           <div className="card-action">
-            <a>Ver detalles</a>
+            <p>Ver detalles</p>
           </div>
         </div>
+      );
+    });
+  }
+
+  renderPlayersTable() {
+    var number = 1;
+    return this.props.players.map(player => {
+      return (
+        <tr key={player._id}>
+          <td>{number++}</td>
+          <td># {player.number}</td>
+          <td>{player.name}</td>
+          <td>{player.lastName}</td>
+          <td>{player.division}</td>
+        </tr>
       );
     });
   }
@@ -29,8 +44,22 @@ class PlayerList extends Component {
   render() {
     return (
       <div className="col s12">
-        <ul className="collection">{this.renderPlayers()}</ul>
+        <table className="highlight">
+          <thead>
+            <tr>
+              <th />
+              <th>Numero</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Division</th>
+            </tr>
+          </thead>
+          <tbody>{this.renderPlayersTable()}</tbody>
+        </table>
       </div>
+      // <div className="col s12">
+      //   <ul className="collection">{this.renderPlayersCards()}</ul>
+      // </div>
     );
   }
 }

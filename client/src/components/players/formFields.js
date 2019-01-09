@@ -7,7 +7,7 @@ export default [
     type: "datetime",
     size: "col s12 m12"
   },
-  { label: "Genero", name: "gender", type: "text", size: "col s12 m12" },
+  { label: "Sexo", name: "sex", type: "text", size: "col s12 m12" },
   { label: "Numero", name: "number", type: "text", size: "col s12 m12" },
   { label: "Division", name: "division", type: "text", size: "col s12 m12" },
   { label: "Activo", name: "isActive", type: "text", size: "col s12 m12" }

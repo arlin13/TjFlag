@@ -11,13 +11,13 @@ module.exports = app => {
   });
 
   app.post("/api/players", requireLogin, async (req, res) => {
-    const { name, lastName, dateOfBirth, gender, number, _division } = req.body;
+    const { name, lastName, dateOfBirth, sex, number, _division } = req.body;
 
     const player = new Player({
       name,
       lastName,
       dateOfBirth,
-      gender,
+      sex,
       number,
       _division
     });

@@ -5,13 +5,6 @@ const requireLogin = require("../middlewares/requireLogin");
 const Team = mongoose.model("teams");
 
 module.exports = app => {
-  // app.param("teamname", async function(request, response, next, teamname) {
-  //   console.log("params function (pls work 1)");
-  //   const team = await Team.find({ name: "Osas" });
-  //   req.teamname = team;
-  //   return next();
-  // });
-
   app.get("/api/teams", async (req, res) => {
     const teams = await Team.find();
     res.send(teams);
@@ -24,13 +17,13 @@ module.exports = app => {
   });
 
   app.post("/api/teams", requireLogin, async (req, res) => {
-    const { name, city, category, gender, division } = req.body;
+    const { name, city, category, mode, division } = req.body;
 
     const team = new Team({
       name,
       city,
       category,
-      gender,
+      mode,
       division
     });
 

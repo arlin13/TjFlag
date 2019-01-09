@@ -42,12 +42,13 @@ class App extends Component {
     );
   }
 }
-
 document.addEventListener("DOMContentLoaded", function() {
+  var chipsElems = document.querySelectorAll(".chips");
   var sideNavElems = document.querySelectorAll(".sidenav");
   var datePickerElems = document.querySelectorAll(".datepicker");
   var collapsibleElems = document.querySelectorAll(".collapsible");
   var autocompleteElems = document.querySelectorAll(".autocomplete");
+  M.Chips.init(chipsElems, {});
   M.Datepicker.init(datePickerElems, {});
   M.Collapsible.init(collapsibleElems, {});
   M.Autocomplete.init(autocompleteElems, {});
