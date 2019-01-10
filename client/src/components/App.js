@@ -42,6 +42,7 @@ class App extends Component {
     );
   }
 }
+
 document.addEventListener("DOMContentLoaded", function() {
   var chipsElems = document.querySelectorAll(".chips");
   var sideNavElems = document.querySelectorAll(".sidenav");
