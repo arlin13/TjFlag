@@ -4,10 +4,15 @@ import { reduxForm, Field } from "redux-form";
 import PlayerField from "./PlayerField";
 import { Link } from "react-router-dom";
 import formFields from "./formFields";
+import "../../style/index.css";
 
 class PlayerForm extends Component {
+  componentDidMount() {
+    console.log("player form did mount");
+  }
+
   renderFields() {
-    return _.map(formFields, ({ label, name, type, size }) => {
+    return _.map(formFields, ({ label, name, type, className }) => {
       return (
         <Field
           key={name}
@@ -15,7 +20,7 @@ class PlayerForm extends Component {
           type="text"
           label={label}
           name={name}
-          size={size}
+          className={className}
         />
       );
     });
@@ -25,7 +30,23 @@ class PlayerForm extends Component {
     return (
       <div style={{ margin: "20px 0px" }}>
         <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
-          <div className="row">{this.renderFields()}</div>
+          <div className="row">
+            {this.renderFields()}
+            <div className="col s12 m12">
+              <label>Equipos</label>
+              <input type="text" style={{ marginTop: "5px", color: "white" }} />
+            </div>
+            <br />
+            <div className="input-field col s12">
+              <i className="material-icons prefix">textsms</i>
+              <input
+                type="text"
+                id="autocomplete-input"
+                className="autocomplete"
+              />
+              <label htmlFor="autocomplete-input">Autocomplete</label>
+            </div>
+          </div>
           <Link to="/players" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>
