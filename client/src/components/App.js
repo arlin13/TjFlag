@@ -13,8 +13,6 @@ import Players from "./players/Players";
 import PlayerNew from "./players/PlayerNew";
 import Stats from "./Stats";
 import Footer from "./Footer";
-import Dashboard from "./Dashboard";
-import SurveyNew from "./surveys/SurveyNew";
 
 class App extends Component {
   componentDidMount() {
@@ -28,13 +26,11 @@ class App extends Component {
           <div className="#eceff1 blue-grey darken-4 white-text">
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/surveys" component={Dashboard} />
-            <Route path="/surveys/new" component={SurveyNew} />
             <Route exact path="/teams" component={Teams} />
             <Route exact path="/teams/new" component={TeamNew} />
             <Route exact path="/players" component={Players} />
             <Route exact path="/players/new" component={PlayerNew} />
-            <Route path="/stats" component={Stats} />
+            <Route exact path="/stats" component={Stats} />
             <Footer />
           </div>
         </BrowserRouter>
@@ -45,11 +41,13 @@ class App extends Component {
 
 document.addEventListener("DOMContentLoaded", function() {
   var chipsElems = document.querySelectorAll(".chips");
+  var selectElems = document.querySelectorAll("select");
   var sideNavElems = document.querySelectorAll(".sidenav");
   var datePickerElems = document.querySelectorAll(".datepicker");
   var collapsibleElems = document.querySelectorAll(".collapsible");
   var autocompleteElems = document.querySelectorAll(".autocomplete");
   M.Chips.init(chipsElems, {});
+  M.FormSelect.init(selectElems, {});
   M.Datepicker.init(datePickerElems, {});
   M.Collapsible.init(collapsibleElems, {});
   M.Autocomplete.init(autocompleteElems, {});

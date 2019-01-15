@@ -7,46 +7,32 @@ import formFields from "./formFields";
 import "../../style/index.css";
 
 class PlayerForm extends Component {
-  componentDidMount() {
-    console.log("player form did mount");
-  }
+  componentDidMount() {}
 
   renderFields() {
-    return _.map(formFields, ({ label, name, type, className }) => {
-      return (
-        <Field
-          key={name}
-          component={PlayerField}
-          type="text"
-          label={label}
-          name={name}
-          className={className}
-        />
-      );
-    });
+    return _.map(
+      formFields,
+      ({ name, label, elementType, elementConfig, className }) => {
+        return (
+          <Field
+            key={name}
+            name={name}
+            label={label}
+            elementType={elementType}
+            elementConfig={elementConfig}
+            component={PlayerField}
+            className={className}
+          />
+        );
+      }
+    );
   }
 
   render() {
     return (
       <div style={{ margin: "20px 0px" }}>
         <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
-          <div className="row">
-            {this.renderFields()}
-            <div className="col s12 m12">
-              <label>Equipos</label>
-              <input type="text" style={{ marginTop: "5px", color: "white" }} />
-            </div>
-            <br />
-            <div className="input-field col s12">
-              <i className="material-icons prefix">textsms</i>
-              <input
-                type="text"
-                id="autocomplete-input"
-                className="autocomplete"
-              />
-              <label htmlFor="autocomplete-input">Autocomplete</label>
-            </div>
-          </div>
+          <div className="row">{this.renderFields()}</div>
           <Link to="/players" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>
@@ -81,3 +67,80 @@ export default reduxForm({
   form: "playerForm",
   destroyOnUnmount: false
 })(PlayerForm);
+
+// <div style={{ margin: "20px 0px" }}>
+//   <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
+//     <div className="row">
+//       <div className="col s12">
+//         <label>Nombre(s):</label>
+//         <input type="text" />
+//       </div>
+//       <div className="col s12">
+//         <label>Apellido:</label>
+//         <input type="text" />
+//       </div>
+//       <div className="col s12">
+//         <label>Fecha de nacimiento:</label>
+//         <input type="text" className="datepicker" />
+//       </div>
+//       <div className="col s12">
+//         <div className="input-field col s12">
+//           <select>
+//             <option value="1">Golden</option>
+//             <option value="2">Silver</option>
+//             <option value="3">Top</option>
+//           </select>
+//           <label>Division:</label>
+//         </div>
+//       </div>
+//       <div className="col s12 inlineFlex">
+//         <label>Sexo:</label>
+//         <p style={{ padding: "10px 0" }}>
+//           <label>
+//             <input name="group1" type="radio" defaultChecked />
+//             <span>Hombre</span>
+//           </label>
+//         </p>
+//         <p style={{ padding: "10px 0" }}>
+//           <label>
+//             <input name="group1" type="radio" />
+//             <span>Mujer</span>
+//           </label>
+//         </p>
+//       </div>
+//       <div className="col s12">
+//         <label>Estado:</label>
+//         <div className="switch" style={{ padding: "10px 0 20px 0" }}>
+//           <label>
+//             Inactivo
+//             <input type="checkbox" />
+//             <span className="lever" />
+//             Activo
+//           </label>
+//         </div>
+//       </div>
+//
+//       <div className="col s12">
+//         <div className="input-field col s12">
+//           <select multiple>
+//             <option value="1">Option 1</option>
+//             <option value="2">Option 2</option>
+//             <option value="3">Option 3</option>
+//           </select>
+//           <label>Equipo(s):</label>
+//         </div>
+//       </div>
+//     </div>
+//     <Link to="/players" className="red btn-flat btn-small white-text">
+//       Cancelar
+//       <i className="material-icons right">cancel</i>
+//     </Link>
+//     <button
+//       type="submit"
+//       className="teal btn-flat btn-small right white-text"
+//     >
+//       Siguiente
+//       <i className="material-icons right">done</i>
+//     </button>
+//   </form>
+// </div>

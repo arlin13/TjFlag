@@ -1,24 +1,76 @@
 export default [
-  { label: "Nombre (s)", name: "name", type: "text", className: "col s12 m6" },
   {
-    label: "Apellido",
-    name: "lastName",
-    type: "text",
+    name: "name",
+    label: "Nombre (s)",
+    elementType: "input",
+    elementConfig: {
+      type: "text"
+    },
     className: "col s12 m6"
   },
   {
-    label: "Fecha de nacimiento",
+    name: "lastName",
+    label: "Apellido",
+    elementType: "input",
+    elementConfig: {
+      type: "text"
+    },
+    className: "col s12 m6"
+  },
+  {
     name: "dateOfBirth",
-    type: "text",
+    label: "Fecha de nacimiento",
+    elementType: "input",
+    elementConfig: {
+      type: "text"
+    },
     className: "datepicker col s12 m12"
   },
-  { label: "Sexo", name: "sex", type: "text", className: "col s12 m12" },
-  { label: "Numero", name: "number", type: "text", className: "col s12 m12" },
   {
-    label: "Division",
-    name: "division",
-    type: "text",
+    name: "sex",
+    label: "Sexo",
+    elementType: "select",
+    elementConfig: {
+      options: [
+        { value: "Hombre", displayValue: "Hombre" },
+        { value: "Mujer", displayValue: "Mujer" }
+      ]
+    },
     className: "col s12 m12"
   },
-  { label: "Activo", name: "isActive", type: "text", className: "col s12 m12" }
+  {
+    name: "number",
+    label: "Numero",
+    elementType: "input",
+    elementConfig: {
+      type: "number",
+      min: 0
+    },
+    className: "col s12 m12"
+  },
+  {
+    name: "division",
+    label: "Division",
+    elementType: "select",
+    elementConfig: {
+      options: [
+        { value: "Gold", displayValue: "Gold" },
+        { value: "Silver", displayValue: "Silver" },
+        { value: "Top", displayValue: "Top" }
+      ]
+    },
+    className: "col s12 m12"
+  },
+  {
+    name: "isActive",
+    label: "Status",
+    elementType: "select",
+    elementConfig: {
+      options: [
+        { value: "True", displayValue: "Activo" },
+        { value: "False", displayValue: "Inactivo" }
+      ]
+    },
+    className: "col s12 m12"
+  }
 ];

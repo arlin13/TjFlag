@@ -1,3 +1,15 @@
+.inlineFlex {
+  display: inline-flex;
+}
+
+.top-botom-margin {
+  padding: 15px 0;
+}
+
+.input-field.col label {
+  left: 0px;
+}
+
 .datepicker-date-display {
   background-color: #e57373;
 }
@@ -5,3 +17,7 @@
 .datepicker-day-button {
   color: black;
 }
+
+/* .datepicker-table td.is-selected {
+  background-color: #e57373;
+} */
