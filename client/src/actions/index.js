@@ -4,6 +4,7 @@ import {
   FETCH_SURVEYS,
   FETCH_TEAMS,
   FETCH_PLAYERS,
+  FETCH_PLAYER,
   FETCH_COURTS
 } from "./types";
 
@@ -49,6 +50,12 @@ export const submitPlayer = (values, history) => async dispatch => {
 export const fetchPlayers = () => async dispatch => {
   const res = await axios.get("/api/players");
   dispatch({ type: FETCH_PLAYERS, payload: res.data });
+};
+
+export const fetchPlayer = () => async dispatch => {
+  const res = await axios.get("/api/player/:id");
+  console.log("fetching player!!");
+  dispatch({ type: FETCH_PLAYER, payload: res.data });
 };
 
 export const fetchCourts = () => async dispatch => {

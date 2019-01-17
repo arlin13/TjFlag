@@ -5,7 +5,14 @@ const requireLogin = require("../middlewares/requireLogin");
 const Player = mongoose.model("players");
 
 module.exports = app => {
-  app.get("/api/players", async (req, res) => {
+  app.get("/api/players/:id", async (req, res) => {
+    // const playerId = req.params.id;
+    // const player = await Player.find(_id: id)
+    console.log("Req params");
+    console.log(req.params);
+  });
+
+  app.get("/api/players/", async (req, res) => {
     const players = await Player.find();
     res.send(players);
   });
