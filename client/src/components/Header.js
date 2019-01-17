@@ -113,6 +113,12 @@ class Header extends Component {
                 </li>
               </ul>
             </li>
+            <li key="divider3">
+              <div className="divider" />
+            </li>
+            <li key="courts">
+              <a href="/courts">Canchas</a>
+            </li>
           </ul>
         </div>
       </nav>

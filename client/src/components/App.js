@@ -11,6 +11,8 @@ import Teams from "./teams/Teams";
 import TeamNew from "./teams/TeamNew";
 import Players from "./players/Players";
 import PlayerNew from "./players/PlayerNew";
+import Courts from "./courts/Courts";
+import CourtNew from "./courts/CourtNew";
 import Stats from "./Stats";
 import Footer from "./Footer";
 
@@ -31,6 +33,8 @@ class App extends Component {
             <Route exact path="/players" component={Players} />
             <Route exact path="/players/new" component={PlayerNew} />
             <Route exact path="/stats" component={Stats} />
+            <Route exact path="/courts" component={Courts} />
+            <Route exact path="/courts/new" component={CourtNew} />
             <Footer />
           </div>
         </BrowserRouter>

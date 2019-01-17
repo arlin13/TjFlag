@@ -8,6 +8,7 @@ require("./models/User");
 require("./models/Survey");
 require("./models/Team");
 require("./models/Player");
+require("./models/Court");
 require("./services/passport");
 
 mongoose.connect(
@@ -36,6 +37,7 @@ require("./routes/surveyRoutes")(app);
 require("./routes/teamRoutes")(app);
 require("./routes/playerRoutes")(app);
 require("./routes/statsRoutes")(app);
+require("./routes/courtRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets (main.js or main.css file)

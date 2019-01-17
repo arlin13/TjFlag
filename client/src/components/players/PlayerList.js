@@ -57,9 +57,6 @@ class PlayerList extends Component {
           <tbody>{this.renderPlayersTable()}</tbody>
         </table>
       </div>
-      // <div className="col s12">
-      //   <ul className="collection">{this.renderPlayersCards()}</ul>
-      // </div>
     );
   }
 }

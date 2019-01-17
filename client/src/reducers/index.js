@@ -4,11 +4,13 @@ import authReducer from "./authReducer";
 import surveysReducer from "./surveysReducer";
 import teamsReducer from "./teamsReducer";
 import playersReducer from "./playersReducer";
+import courtsReducer from "./courtsReducer";
 
 export default combineReducers({
   auth: authReducer,
   form: reduxForm,
   surveys: surveysReducer,
   teams: teamsReducer,
-  players: playersReducer
+  players: playersReducer,
+  courts: courtsReducer
 });

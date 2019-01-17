@@ -21,7 +21,9 @@ export default ({
       inputElement = (
         <select>
           {elementConfig.options.map(option => (
-            <option value={option.value}>{option.displayValue}</option>
+            <option key={option.value} value={option.value}>
+              {option.displayValue}
+            </option>
           ))}
         </select>
       );
@@ -32,11 +34,9 @@ export default ({
 
   return (
     <div className={className}>
-      <label style={{ visibility: { touched } }}>{label}</label>
+      <label>{label}</label>
       {inputElement}
-      <div style={{ color: "red", visibility: { error } }}>
-        {touched && error}
-      </div>
+      <div className="red-text">{touched && error}</div>
     </div>
   );
 };

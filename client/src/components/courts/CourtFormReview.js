@@ -5,13 +5,12 @@ import formFields from "./formFields";
 import { withRouter } from "react-router-dom";
 import * as actions from "../../actions";
 
-const PlayerFormReview = ({ onCancel, formValues, submitPlayer, history }) => {
+const CourtFormReview = ({ onCancel, formValues, submitCourt, history }) => {
   const reviewFields = _.map(formFields, ({ name, label }) => {
-    console.log(formValues);
     return (
       <div key={name}>
         <label>{label}</label>
-        <label>{formValues[name]}</label>
+        <div>{formValues[name]}</div>
       </div>
     );
   });
@@ -28,7 +27,7 @@ const PlayerFormReview = ({ onCancel, formValues, submitPlayer, history }) => {
       </button>
       <button
         className="green white-text btn-flat right"
-        onClick={() => submitPlayer(formValues, history)}
+        onClick={() => submitCourt(formValues, history)}
       >
         Agregar <i className="material-icons right">add</i>
       </button>
@@ -38,11 +37,11 @@ const PlayerFormReview = ({ onCancel, formValues, submitPlayer, history }) => {
 
 function mapStateToProps(state) {
   return {
-    formValues: state.form.playerForm.values
+    formValues: state.form.courtForm.values
   };
 }
 
 export default connect(
   mapStateToProps,
   actions
-)(withRouter(PlayerFormReview));
+)(withRouter(CourtFormReview));

@@ -32,6 +32,7 @@ export default [
     elementType: "select",
     elementConfig: {
       options: [
+        { value: null, displayValue: "" },
         { value: "Hombre", displayValue: "Hombre" },
         { value: "Mujer", displayValue: "Mujer" }
       ]
@@ -54,6 +55,7 @@ export default [
     elementType: "select",
     elementConfig: {
       options: [
+        { value: null, displayValue: "" },
         { value: "Gold", displayValue: "Gold" },
         { value: "Silver", displayValue: "Silver" },
         { value: "Top", displayValue: "Top" }
@@ -67,6 +69,7 @@ export default [
     elementType: "select",
     elementConfig: {
       options: [
+        { value: null, displayValue: "" },
         { value: "True", displayValue: "Activo" },
         { value: "False", displayValue: "Inactivo" }
       ]
