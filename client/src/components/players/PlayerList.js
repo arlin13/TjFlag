@@ -1,29 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchPlayers } from "../../actions";
 
 class PlayerList extends Component {
   componentDidMount() {
     this.props.fetchPlayers();
-  }
-
-  renderPlayers() {
-    return this.props.players.map(player => {
-      return (
-        <div className="card blue-grey darken-1" key={player._id}>
-          <div className="card-content white-text">
-            <span className="card-title">
-              {player.name} {player.lastName}
-            </span>
-            <span className="left">Equipo: "Pendiente"</span>
-            <span className="right"># {player.number}</span>
-          </div>
-          <div className="card-action">
-            <p>Ver detalles</p>
-          </div>
-        </div>
-      );
-    });
   }
 
   renderPlayersTable() {
@@ -37,7 +19,9 @@ class PlayerList extends Component {
           <td>{player.lastName}</td>
           <td>{player.division}</td>
           <td>
-            <a href={"/players/details"}>See more</a>
+            <Link to={"/players/details/?playerId=" + player._id}>
+              See more
+            </Link>
           </td>
         </tr>
       );

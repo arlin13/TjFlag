@@ -22,7 +22,6 @@ export const submitSurvey = (values, history) => async dispatch => {
   const res = await axios.post("/api/surveys", values);
   history.push("/surveys");
   dispatch({ type: FETCH_USER, payload: res.data });
-  // return { type: "submit_survey" };
 };
 
 export const fetchSurveys = () => async dispatch => {
@@ -49,11 +48,12 @@ export const submitPlayer = (values, history) => async dispatch => {
 
 export const fetchPlayers = () => async dispatch => {
   const res = await axios.get("/api/players");
+  console.log("fetching playerS!!");
   dispatch({ type: FETCH_PLAYERS, payload: res.data });
 };
 
-export const fetchPlayer = () => async dispatch => {
-  const res = await axios.get("/api/player?playerId");
+export const fetchPlayer = playerId => async dispatch => {
+  const res = await axios.get("/api/player?playerId=" + playerId);
   console.log("fetching player!!");
   dispatch({ type: FETCH_PLAYER, payload: res.data });
 };
