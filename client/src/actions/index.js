@@ -53,7 +53,7 @@ export const fetchPlayers = () => async dispatch => {
 };
 
 export const fetchPlayer = () => async dispatch => {
-  const res = await axios.get("/api/player/:id");
+  const res = await axios.get("/api/player?playerId");
   console.log("fetching player!!");
   dispatch({ type: FETCH_PLAYER, payload: res.data });
 };

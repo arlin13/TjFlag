@@ -8,7 +8,12 @@ class PlayerDetails extends Component {
   }
 
   render() {
-    return <h1>Player details!</h1>;
+    return (
+      <div className="col s12">
+        <h1>Player details!</h1>
+        <p>{this.props.player}</p>
+      </div>
+    );
   }
 }
 

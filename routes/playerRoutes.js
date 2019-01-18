@@ -5,16 +5,16 @@ const requireLogin = require("../middlewares/requireLogin");
 const Player = mongoose.model("players");
 
 module.exports = app => {
-  app.get("/api/players/:id", async (req, res) => {
-    // const playerId = req.params.id;
-    // const player = await Player.find(_id: id)
-    console.log("Req params");
-    console.log(req.params);
-  });
-
-  app.get("/api/players/", async (req, res) => {
+  app.get("/api/players", async (req, res) => {
     const players = await Player.find();
     res.send(players);
+  });
+
+  app.get("/api/player", async (req, res) => {
+    const playerId = req.query.playerId;
+    const player = await Player.find({ _id: playerId });
+    console.log("Req query on player route");
+    res.send(player);
   });
 
   app.post("/api/players", requireLogin, async (req, res) => {

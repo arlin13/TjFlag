@@ -37,7 +37,7 @@ class PlayerList extends Component {
           <td>{player.lastName}</td>
           <td>{player.division}</td>
           <td>
-            <a href="/players/details">See more</a>
+            <a href={"/players/details"}>See more</a>
           </td>
         </tr>
       );
