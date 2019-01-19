@@ -12,10 +12,7 @@ module.exports = app => {
 
   app.get("/api/player", async (req, res) => {
     const playerId = req.query.playerId;
-    console.log("--- Req query on player route!");
-    console.log("Player Id: " + playerId + ". Thats type: " + typeof playerId);
     const player = await Player.findOne({ _id: playerId });
-    console.log(player);
     res.send(player);
   });
 
