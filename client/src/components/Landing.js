@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "materialize-css/dist/css/materialize.min.css";
+import "../style/index.css";
 const img_el_flag_nos_une = require("../images/ElFlagNosUne.jpg");
 
 class Landing extends Component {
@@ -14,7 +15,7 @@ class Landing extends Component {
               alt="logo"
             />
           </div>
-          <div className="col s4">
+          <div className="col s4 top-botom-margin">
             <a style={{ color: "#F67645" }} href="/games">
               TIJUANA
             </a>

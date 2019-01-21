@@ -17,14 +17,15 @@ module.exports = app => {
   });
 
   app.post("/api/teams", requireLogin, async (req, res) => {
-    const { name, city, category, mode, division } = req.body;
+    const { name, city, category, mode, division, coach } = req.body;
 
     const team = new Team({
       name,
       city,
       category,
       mode,
-      division
+      division,
+      coach
     });
 
     try {

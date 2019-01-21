@@ -32,6 +32,8 @@ class TeamDetails extends Component {
             <label>Categoria: {team.category}</label>
             <br />
             <label>Rama: {team.mode}</label>
+            <br />
+            <label>Coach: {team.coach}</label>
           </div>
           <div id="teamPlayers" className="top-botom-margin">
             <h6>JUGADORES</h6>
@@ -44,6 +46,44 @@ class TeamDetails extends Component {
               <div className="col s12 m6">Jugador 5</div>
               <div className="col s12 m6">Jugador 6</div>
             </div>
+          </div>
+          <div id="teamGames" className="top-botom-margin">
+            <h6>PROXIMOS JUEGOS</h6>
+            <div className="divider" />
+            <table>
+              <thead>
+                <tr>
+                  <th />
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Contra</th>
+                  <th>Lugar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td />
+                  <td>12/02/2019</td>
+                  <td>7:00 pm</td>
+                  <td>Equipo C</td>
+                  <td>Cancha UABC</td>
+                </tr>
+                <tr>
+                  <td />
+                  <td>19/02/2019</td>
+                  <td>6:00 pm</td>
+                  <td>Equipo A</td>
+                  <td>Cancha UABC</td>
+                </tr>
+                <tr>
+                  <td />
+                  <td>24/02/2019</td>
+                  <td>6:00 pm</td>
+                  <td>Equipo D</td>
+                  <td>Unidad Deportiva</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
