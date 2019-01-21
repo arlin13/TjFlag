@@ -6,7 +6,7 @@ const Teams = () => {
   return (
     <div className="container row">
       <div className="col s12">
-        <h5>EQUIPOS</h5>
+        <h5 className="center">EQUIPOS</h5>
       </div>
       <div className="col s12">
         <div style={{ margin: "10px" }}>

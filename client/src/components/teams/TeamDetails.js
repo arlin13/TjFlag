@@ -16,7 +16,7 @@ class TeamDetails extends Component {
       <div className="container row">
         <div className="col s12 left">
           <a href={"/teams"}>
-            <div className="valign-wrapper top-botom-margin">
+            <div className="valign-wrapper top-bottom-padding">
               <i className="material-icons">arrow_back</i>
               Lista de equipos
             </div>
@@ -35,7 +35,7 @@ class TeamDetails extends Component {
             <br />
             <label>Coach: {team.coach}</label>
           </div>
-          <div id="teamPlayers" className="top-botom-margin">
+          <div id="teamPlayers" className="top-bottom-padding">
             <h6>JUGADORES</h6>
             <div className="divider" />
             <div className="col s12 center">
@@ -47,7 +47,7 @@ class TeamDetails extends Component {
               <div className="col s12 m6">Jugador 6</div>
             </div>
           </div>
-          <div id="teamGames" className="top-botom-margin">
+          <div id="teamGames" className="top-bottom-padding">
             <h6>PROXIMOS JUEGOS</h6>
             <div className="divider" />
             <table>

@@ -16,7 +16,7 @@ class PlayerDetails extends Component {
       <div className="container row">
         <div className="col s12 left">
           <a href={"/players"}>
-            <div className="valign-wrapper top-botom-margin">
+            <div className="valign-wrapper top-bottom-padding">
               <i className="material-icons">arrow_back</i>
               Lista de jugadores
             </div>
@@ -26,7 +26,7 @@ class PlayerDetails extends Component {
           <h3 className="center">
             # {player.number} {player.name} {player.lastName}
           </h3>
-          <div id="playerBasicInfo" className="top-botom-margin">
+          <div id="playerBasicInfo" className="top-bottom-padding">
             <h6>INFORMACION GENERAL</h6>
             <div className="divider" />
             <label>Division: {player.division}</label>
@@ -38,13 +38,13 @@ class PlayerDetails extends Component {
             <br />
             <label>Ciudad: {player.city}</label>
           </div>
-          <div id="playerTeamsInfo" className="top-botom-margin">
+          <div id="playerTeamsInfo" className="top-bottom-padding">
             <h6>EQUIPOS</h6>
             <div className="divider" />
             <label>Equipos: </label>
             <label>{player.teams}</label>
           </div>
-          <div id="playerStatsInfo" className="top-botom-margin">
+          <div id="playerStatsInfo" className="top-bottom-padding">
             <h6>ESTADISTICAS</h6>
             <div className="divider" />
             <table className="striped centered">
@@ -94,7 +94,7 @@ class PlayerDetails extends Component {
               </tbody>
             </table>
           </div>
-          <div id="playerAwardInfo" className="top-botom-margin">
+          <div id="playerAwardInfo" className="top-bottom-padding">
             <h6>PREMIOS</h6>
             <div className="divider" />
           </div>

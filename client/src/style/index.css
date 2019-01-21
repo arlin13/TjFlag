@@ -2,8 +2,12 @@
   display: inline-flex;
 }
 
-.top-botom-margin {
+.top-bottom-padding {
   padding: 15px 0;
+}
+
+.top-bottom-margin {
+  margin: 15px 0;
 }
 
 .input-field.col label {
@@ -16,6 +20,12 @@
 
 .datepicker-day-button {
   color: black;
+}
+
+.cityDiv {
+  margin: 150px 0 0 0;
+  height: 200px;
+  text-align: center;
 }
 
 /* .datepicker-table td.is-selected {

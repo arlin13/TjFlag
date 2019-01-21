@@ -51,11 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
   var chipsElems = document.querySelectorAll(".chips");
   var selectElems = document.querySelectorAll("select");
   var sideNavElems = document.querySelectorAll(".sidenav");
+  var carouselElems = document.querySelectorAll(".carousel");
   var datePickerElems = document.querySelectorAll(".datepicker");
   var collapsibleElems = document.querySelectorAll(".collapsible");
   var autocompleteElems = document.querySelectorAll(".autocomplete");
   M.Chips.init(chipsElems, {});
   M.FormSelect.init(selectElems, {});
+  M.Carousel.init(carouselElems, {
+    numVisible: 1,
+    indicators: true
+  });
   M.Datepicker.init(datePickerElems, {});
   M.Collapsible.init(collapsibleElems, {});
   M.Autocomplete.init(autocompleteElems, {});
