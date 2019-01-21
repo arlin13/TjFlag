@@ -10,10 +10,10 @@ module.exports = app => {
     res.send(teams);
   });
 
-  app.get("/api/teams/:teamname", async (req, res) => {
-    console.log("Im on get teams teamname");
-    const team = await Team.find({ name: req.params.teamname });
-    res.send(req.params);
+  app.get("/api/team", async (req, res) => {
+    const teamId = req.query.teamId;
+    const team = await Team.findOne({ _id: teamId });
+    res.send(team);
   });
 
   app.post("/api/teams", requireLogin, async (req, res) => {

@@ -3,6 +3,7 @@ import {
   FETCH_USER,
   FETCH_SURVEYS,
   FETCH_TEAMS,
+  FETCH_TEAM,
   FETCH_PLAYERS,
   FETCH_PLAYER,
   FETCH_COURTS
@@ -40,6 +41,11 @@ export const fetchTeams = () => async dispatch => {
   dispatch({ type: FETCH_TEAMS, payload: res.data });
 };
 
+export const fetchTeam = teamId => async dispatch => {
+  const res = await axios.get("/api/team?teamId=" + teamId);
+  dispatch({ type: FETCH_TEAM, payload: res.data });
+};
+
 export const submitPlayer = (values, history) => async dispatch => {
   const res = await axios.post("/api/players", values);
   history.push("/players");
@@ -48,13 +54,11 @@ export const submitPlayer = (values, history) => async dispatch => {
 
 export const fetchPlayers = () => async dispatch => {
   const res = await axios.get("/api/players");
-  console.log("fetching playerS!!");
   dispatch({ type: FETCH_PLAYERS, payload: res.data });
 };
 
 export const fetchPlayer = playerId => async dispatch => {
   const res = await axios.get("/api/player?playerId=" + playerId);
-  console.log("fetching player!!");
   dispatch({ type: FETCH_PLAYER, payload: res.data });
 };
 

@@ -50,7 +50,7 @@ class PlayerDetails extends Component {
             <table className="striped centered">
               <thead>
                 <tr>
-                  <th />
+                  <th>Oponente</th>
                   <th>Pases completos</th>
                   <th>Pases TD</th>
                   <th>Pases atrapados</th>
@@ -62,7 +62,7 @@ class PlayerDetails extends Component {
               </thead>
               <tbody>
                 <tr>
-                  <td />
+                  <td>Eq A</td>
                   <td>4</td>
                   <td>0</td>
                   <td>2</td>
@@ -72,7 +72,7 @@ class PlayerDetails extends Component {
                   <td>6</td>
                 </tr>
                 <tr>
-                  <td />
+                  <td>Eq B</td>
                   <td>6</td>
                   <td>2</td>
                   <td>4</td>
@@ -82,7 +82,7 @@ class PlayerDetails extends Component {
                   <td>4</td>
                 </tr>
                 <tr>
-                  <td />
+                  <td>Eq C</td>
                   <td>3</td>
                   <td>1</td>
                   <td>2</td>

@@ -9,6 +9,7 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Teams from "./teams/Teams";
 import TeamNew from "./teams/TeamNew";
+import TeamDetails from "./teams/TeamDetails";
 import Players from "./players/Players";
 import PlayerNew from "./players/PlayerNew";
 import PlayerDetails from "./players/PlayerDetails";
@@ -31,6 +32,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/teams" component={Teams} />
             <Route exact path="/teams/new" component={TeamNew} />
+            <Route path="/teams/details" component={TeamDetails} />
             <Route exact path="/players" component={Players} />
             <Route exact path="/players/new" component={PlayerNew} />
             <Route path="/players/details" component={PlayerDetails} />

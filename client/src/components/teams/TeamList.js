@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchTeams } from "../../actions";
 
@@ -31,6 +32,9 @@ class TeamList extends Component {
           <td>{team.category}</td>
           <td>{team.mode}</td>
           <td>{team.city}</td>
+          <td>
+            <Link to={"/teams/details/?teamId=" + team._id}>Ver mas</Link>
+          </td>
         </tr>
       );
     });
@@ -52,9 +56,6 @@ class TeamList extends Component {
           <tbody>{this.renderTeamsTable()}</tbody>
         </table>
       </div>
-      // <div>
-      //   <ul className="collection">{this.renderTeams()}</ul>
-      // </div>
     );
   }
 }

@@ -19,9 +19,7 @@ class PlayerList extends Component {
           <td>{player.lastName}</td>
           <td>{player.division}</td>
           <td>
-            <Link to={"/players/details/?playerId=" + player._id}>
-              See more
-            </Link>
+            <Link to={"/players/details/?playerId=" + player._id}>Ver mas</Link>
           </td>
         </tr>
       );
