@@ -19,7 +19,6 @@ module.exports = app => {
   });
 
   app.get("/api/surveys/:surveyId", (req, res) => {
-    console.log("Inside of get surveys -> by surveyId route!!!");
     res.send("Inside of get surveys -> by surveyId route!!!");
   });
 

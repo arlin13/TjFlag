@@ -5,6 +5,7 @@ import surveysReducer from "./surveysReducer";
 import teamsReducer from "./teamsReducer";
 import playersReducer from "./playersReducer";
 import courtsReducer from "./courtsReducer";
+import tournamentsReducer from "./tournamentsReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   surveys: surveysReducer,
   teams: teamsReducer,
   players: playersReducer,
-  courts: courtsReducer
+  courts: courtsReducer,
+  tournaments: tournamentsReducer
 });

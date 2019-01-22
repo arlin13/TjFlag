@@ -16,6 +16,9 @@ import PlayerDetails from "./players/PlayerDetails";
 import Courts from "./courts/Courts";
 import CourtNew from "./courts/CourtNew";
 import CourtDetails from "./courts/CourtDetails";
+import Tournaments from "./tournaments/Tournaments";
+import TournamentNew from "./tournaments/TournamentNew";
+import TournamentDetails from "./tournaments/TournamentDetails";
 import Stats from "./Stats";
 import Footer from "./Footer";
 
@@ -41,6 +44,9 @@ class App extends Component {
             <Route exact path="/courts" component={Courts} />
             <Route exact path="/courts/new" component={CourtNew} />
             <Route path="/courts/details" component={CourtDetails} />
+            <Route exact path="/tournaments" component={Tournaments} />
+            <Route exact path="/tournaments/new" component={TournamentNew} />
+            <Route path="/tournaments/details" component={TournamentDetails} />
             <Footer />
           </div>
         </BrowserRouter>
