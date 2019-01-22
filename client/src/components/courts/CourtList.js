@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchCourts } from "../../actions";
 
@@ -29,7 +30,10 @@ class CourtList extends Component {
           <td>{number++}</td>
           <td>{court.name}</td>
           <td>{court.city}</td>
-          <td>A</td>
+          <td>{court.address}</td>
+          <td>
+            <Link to={"/courts/details/?courtId=" + court._id}>Ver mas</Link>
+          </td>
         </tr>
       );
     });
@@ -44,7 +48,8 @@ class CourtList extends Component {
               <th />
               <th>Nombre</th>
               <th>Ciudad</th>
-              <th>Ubicacion</th>
+              <th>Direccion</th>
+              <th />
             </tr>
           </thead>
           <tbody>{this.renderCourtsTable()}</tbody>

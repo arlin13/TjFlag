@@ -28,6 +28,10 @@
   text-align: center;
 }
 
+#mapid {
+  height: 180px;
+}
+
 /* .datepicker-table td.is-selected {
   background-color: #e57373;
 } */

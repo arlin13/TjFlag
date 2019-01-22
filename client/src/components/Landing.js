@@ -67,8 +67,9 @@ class Landing extends Component {
               </a>
             </div>
           </div>
-          <div className="col s12">
+          <div className="col s12 top-bottom-padding">
             <h3 className="center">CUMPLEAÑEROS DEL MES</h3>
+            <p>TODO</p>
           </div>
         </div>
       </div>

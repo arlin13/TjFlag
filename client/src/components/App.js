@@ -15,6 +15,7 @@ import PlayerNew from "./players/PlayerNew";
 import PlayerDetails from "./players/PlayerDetails";
 import Courts from "./courts/Courts";
 import CourtNew from "./courts/CourtNew";
+import CourtDetails from "./courts/CourtDetails";
 import Stats from "./Stats";
 import Footer from "./Footer";
 
@@ -39,6 +40,7 @@ class App extends Component {
             <Route exact path="/stats" component={Stats} />
             <Route exact path="/courts" component={Courts} />
             <Route exact path="/courts/new" component={CourtNew} />
+            <Route path="/courts/details" component={CourtDetails} />
             <Footer />
           </div>
         </BrowserRouter>

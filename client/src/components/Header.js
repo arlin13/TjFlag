@@ -71,8 +71,8 @@ class Header extends Component {
             <li key="players">
               <a href="/players">Jugadores</a>
             </li>
-            <li key="stats">
-              <a href="/stats">Estadisticas</a>
+            <li key="courts">
+              <a href="/courts">Canchas</a>
             </li>
             {this.renderTopNavContent()}
           </ul>
@@ -87,8 +87,8 @@ class Header extends Component {
             <li key="players">
               <a href="/players">Jugadores</a>
             </li>
-            <li key="stats">
-              <a href="/stats">Estadisticas</a>
+            <li key="courts">
+              <a href="/courts">Canchas</a>
             </li>
             <li key="divider2">
               <div className="divider" />
@@ -116,8 +116,8 @@ class Header extends Component {
             <li key="divider3">
               <div className="divider" />
             </li>
-            <li key="courts">
-              <a href="/courts">Canchas</a>
+            <li key="tournaments">
+              <a href="/tournaments">Torneos</a>
             </li>
           </ul>
         </div>

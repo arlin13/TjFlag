@@ -10,13 +10,20 @@ module.exports = app => {
     res.send(courts);
   });
 
+  app.get("/api/court", async (req, res) => {
+    const courtId = req.query.courtId;
+    const court = await Court.findOne({ _id: courtId });
+    res.send(court);
+  });
+
   app.post("/api/courts", requireLogin, async (req, res) => {
-    const { name, description, city, location } = req.body;
+    const { name, description, city, address, location } = req.body;
 
     const court = new Court({
       name,
       description,
       city,
+      address,
       location
     });
 

@@ -6,7 +6,8 @@ import {
   FETCH_TEAM,
   FETCH_PLAYERS,
   FETCH_PLAYER,
-  FETCH_COURTS
+  FETCH_COURTS,
+  FETCH_COURT
 } from "./types";
 
 export const fetchUser = () => async dispatch => {
@@ -65,4 +66,9 @@ export const fetchPlayer = playerId => async dispatch => {
 export const fetchCourts = () => async dispatch => {
   const res = await axios.get("/api/courts");
   dispatch({ type: FETCH_COURTS, payload: res.data });
+};
+
+export const fetchCourt = courtId => async dispatch => {
+  const res = await axios.get("/api/court?courtId=" + courtId);
+  dispatch({ type: FETCH_COURT, payload: res.data });
 };
