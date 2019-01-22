@@ -62,8 +62,8 @@ class Header extends Component {
             <i className="material-icons">menu</i>
           </a>
           <ul className="right hide-on-med-and-down">
-            <li key="games">
-              <a href="/games">Proximos juegos</a>
+            <li key="tournaments">
+              <a href="/tournaments">Torneos</a>
             </li>
             <li key="teams">
               <a href="/teams">Equipos</a>
