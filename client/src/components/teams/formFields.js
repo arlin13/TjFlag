@@ -4,4 +4,5 @@ export default [
   { label: "Categoria", name: "category" },
   { label: "Rama", name: "mode" },
   { label: "Coach", name: "coach" }
+  // { label: "Jugadores", name: "players" }
 ];

@@ -68,7 +68,10 @@ class Landing extends Component {
             </div>
           </div>
           <div className="col s12 top-bottom-padding">
-            <h3 className="center">CUMPLEAÑEROS DEL MES</h3>
+            <h3 className="center">CUMPLEAÑEROS</h3>
+            <h4 className="center" style={{ margin: "-20px 0 0 0" }}>
+              DE LA SEMANA
+            </h4>
             <p>TODO</p>
           </div>
         </div>

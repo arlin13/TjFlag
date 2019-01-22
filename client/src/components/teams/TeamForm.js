@@ -22,9 +22,29 @@ class TeamForm extends Component {
 
   render() {
     return (
-      <div style={{ margin: "20px 0px" }}>
+      <div className="row top-bottom-margin">
         <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
           {this.renderFields()}
+          <a className="modal-trigger right" href="#modal1">
+            + Agregar jugadores
+          </a>
+          <label>Jugadores</label>
+          <input type="text" />
+          <div id="modal1" className="modal">
+            <div className="modal-content black-text">
+              <h4>Jugadores</h4>
+              <p>Selecciona los jugadores</p>
+            </div>
+            <div className="modal-footer">
+              <a
+                href="#!"
+                className="modal-close waves-effect waves-green btn-flat"
+              >
+                OK
+              </a>
+            </div>
+          </div>
+
           <Link to="/teams" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>

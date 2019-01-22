@@ -51,6 +51,7 @@ class App extends Component {
 
 document.addEventListener("DOMContentLoaded", function() {
   var chipsElems = document.querySelectorAll(".chips");
+  var modalElems = document.querySelectorAll(".modal");
   var selectElems = document.querySelectorAll("select");
   var sideNavElems = document.querySelectorAll(".sidenav");
   var carouselElems = document.querySelectorAll(".carousel");
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var collapsibleElems = document.querySelectorAll(".collapsible");
   var autocompleteElems = document.querySelectorAll(".autocomplete");
   M.Chips.init(chipsElems, {});
+  M.Modal.init(modalElems, {});
   M.FormSelect.init(selectElems, {});
   M.Carousel.init(carouselElems, {
     numVisible: 1,
