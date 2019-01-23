@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import formFields from "./formFields";
 import { connect } from "react-redux";
 import { fetchPlayersBasic } from "../../actions";
+import "../../style/index.css";
 
 class TeamForm extends Component {
   componentDidMount() {
@@ -27,18 +28,18 @@ class TeamForm extends Component {
   }
 
   renderPlayersList() {
-    console.log("renderPlayersList");
-    console.log(this.props.players);
     return this.props.players.map(player => {
       return (
-        <p key={player._id}>
-          <label>
-            <input type="checkbox" />
-            <span>
-              {player.name} {player.lastName}
-            </span>
-          </label>
-        </p>
+        <div key={player._id} className="col s6 l3">
+          <p>
+            <label>
+              <input type="checkbox" />
+              <span>
+                {player.name} {player.lastName}
+              </span>
+            </label>
+          </p>
+        </div>
       );
     });
   }
@@ -49,7 +50,9 @@ class TeamForm extends Component {
         <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
           {this.renderFields()}
           <label>Jugadores</label>
-          <div id="playerListDiv">{this.renderPlayersList()}</div>
+          <div id="playerListDiv" className="row">
+            {this.renderPlayersList()}
+          </div>
           <Link to="/teams" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>

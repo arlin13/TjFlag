@@ -15,7 +15,6 @@ module.exports = app => {
       {},
       { _id: 1, name: 1, lastName: 1 }
     );
-    console.log(playersBasic);
     res.send(playersBasic);
   });
 

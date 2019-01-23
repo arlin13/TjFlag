@@ -3,6 +3,7 @@ import {
   FETCH_USER,
   FETCH_SURVEYS,
   FETCH_TEAMS,
+  FETCH_TEAMS_BASIC,
   FETCH_TEAM,
   FETCH_PLAYERS,
   FETCH_PLAYERS_BASIC,
@@ -47,6 +48,11 @@ export const submitTeam = (values, history) => async dispatch => {
 export const fetchTeams = () => async dispatch => {
   const res = await axios.get("/api/teams");
   dispatch({ type: FETCH_TEAMS, payload: res.data });
+};
+
+export const fetchTeamsBasic = () => async dispatch => {
+  const res = await axios.get("/api/teamsbasic");
+  dispatch({ type: FETCH_TEAMS_BASIC, payload: res.data });
 };
 
 export const fetchTeam = teamId => async dispatch => {

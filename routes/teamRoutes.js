@@ -10,6 +10,11 @@ module.exports = app => {
     res.send(teams);
   });
 
+  app.get("/api/teamsbasic", async (req, res) => {
+    const teamsBasic = await Team.find({}, { _id: 1, name: 1 });
+    res.send(teamsBasic);
+  });
+
   app.get("/api/team", async (req, res) => {
     const teamId = req.query.teamId;
     const team = await Team.findOne({ _id: teamId });

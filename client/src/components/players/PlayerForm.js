@@ -4,9 +4,15 @@ import { reduxForm, Field } from "redux-form";
 import PlayerField from "./PlayerField";
 import { Link } from "react-router-dom";
 import formFields from "./formFields";
+import { connect } from "react-redux";
+import { fetchTeamsBasic } from "../../actions";
 import "../../style/index.css";
 
 class PlayerForm extends Component {
+  componentDidMount() {
+    this.props.fetchTeamsBasic();
+  }
+
   renderFields() {
     return _.map(
       formFields,
@@ -26,11 +32,30 @@ class PlayerForm extends Component {
     );
   }
 
+  renderTeamsList() {
+    return this.props.teams.map(team => {
+      return (
+        <div key={team._id} className="col s6 l3">
+          <p>
+            <label>
+              <input type="checkbox" />
+              <span>{team.name}</span>
+            </label>
+          </p>
+        </div>
+      );
+    });
+  }
+
   render() {
     return (
-      <div style={{ margin: "20px 0px" }}>
+      <div className="row top-bottom-margin">
         <form onSubmit={this.props.handleSubmit(this.props.onPlayerSubmit)}>
-          <div className="row">{this.renderFields()}</div>
+          {this.renderFields()}
+          <label>Equipos</label>
+          <div id="teamListDiv" className="row">
+            {this.renderTeamsList()}
+          </div>
           <Link to="/players" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>
@@ -59,6 +84,15 @@ function validate(values) {
 
   return errors;
 }
+
+function mapStateToProps({ teams }) {
+  return { teams };
+}
+
+PlayerForm = connect(
+  mapStateToProps,
+  { fetchTeamsBasic }
+)(PlayerForm);
 
 export default reduxForm({
   validate,
