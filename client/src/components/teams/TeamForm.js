@@ -4,8 +4,14 @@ import { reduxForm, Field } from "redux-form";
 import TeamField from "./TeamField";
 import { Link } from "react-router-dom";
 import formFields from "./formFields";
+import { connect } from "react-redux";
+import { fetchPlayers } from "../../actions";
 
 class TeamForm extends Component {
+  componentDidMount() {
+    this.props.fetchPlayers();
+  }
+
   renderFields() {
     return _.map(formFields, ({ label, name }) => {
       return (
@@ -16,6 +22,21 @@ class TeamForm extends Component {
           label={label}
           name={name}
         />
+      );
+    });
+  }
+
+  renderPlayersList() {
+    return this.props.players.map(player => {
+      return (
+        <p key={player._id}>
+          <label>
+            <input type="checkbox" />
+            <span>
+              {player.name} {player.lastName}
+            </span>
+          </label>
+        </p>
       );
     });
   }
@@ -34,6 +55,7 @@ class TeamForm extends Component {
             <div className="modal-content black-text">
               <h4>Jugadores</h4>
               <p>Selecciona los jugadores</p>
+              {this.renderPlayersList()}
             </div>
             <div className="modal-footer">
               <a
@@ -74,8 +96,23 @@ function validate(values) {
   return errors;
 }
 
+function mapStateToProps({ players }) {
+  return { players };
+}
+
+TeamForm = connect(
+  mapStateToProps,
+  { fetchPlayers }
+)(TeamForm);
+
 export default reduxForm({
   validate,
   form: "teamForm",
   destroyOnUnmount: false
 })(TeamForm);
+
+// export default reduxForm({
+//   validate,
+//   form: "teamForm",
+//   destroyOnUnmount: false
+// })(TeamForm);
