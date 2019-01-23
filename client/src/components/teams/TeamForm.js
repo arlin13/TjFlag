@@ -5,11 +5,11 @@ import TeamField from "./TeamField";
 import { Link } from "react-router-dom";
 import formFields from "./formFields";
 import { connect } from "react-redux";
-import { fetchPlayers } from "../../actions";
+import { fetchPlayersBasic } from "../../actions";
 
 class TeamForm extends Component {
   componentDidMount() {
-    this.props.fetchPlayers();
+    this.props.fetchPlayersBasic();
   }
 
   renderFields() {
@@ -27,6 +27,8 @@ class TeamForm extends Component {
   }
 
   renderPlayersList() {
+    console.log("renderPlayersList");
+    console.log(this.props.players);
     return this.props.players.map(player => {
       return (
         <p key={player._id}>
@@ -46,27 +48,8 @@ class TeamForm extends Component {
       <div className="row top-bottom-margin">
         <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
           {this.renderFields()}
-          <a className="modal-trigger right" href="#modal1">
-            + Agregar jugadores
-          </a>
           <label>Jugadores</label>
-          <input type="text" />
-          <div id="modal1" className="modal">
-            <div className="modal-content black-text">
-              <h4>Jugadores</h4>
-              <p>Selecciona los jugadores</p>
-              {this.renderPlayersList()}
-            </div>
-            <div className="modal-footer">
-              <a
-                href="#!"
-                className="modal-close waves-effect waves-green btn-flat"
-              >
-                OK
-              </a>
-            </div>
-          </div>
-
+          <div id="playerListDiv">{this.renderPlayersList()}</div>
           <Link to="/teams" className="red btn-flat btn-small white-text">
             Cancelar
             <i className="material-icons right">cancel</i>
@@ -102,7 +85,7 @@ function mapStateToProps({ players }) {
 
 TeamForm = connect(
   mapStateToProps,
-  { fetchPlayers }
+  { fetchPlayersBasic }
 )(TeamForm);
 
 export default reduxForm({

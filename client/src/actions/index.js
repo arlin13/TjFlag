@@ -5,6 +5,7 @@ import {
   FETCH_TEAMS,
   FETCH_TEAM,
   FETCH_PLAYERS,
+  FETCH_PLAYERS_BASIC,
   FETCH_PLAYER,
   FETCH_COURTS,
   FETCH_COURT,
@@ -63,6 +64,11 @@ export const submitPlayer = (values, history) => async dispatch => {
 export const fetchPlayers = () => async dispatch => {
   const res = await axios.get("/api/players");
   dispatch({ type: FETCH_PLAYERS, payload: res.data });
+};
+
+export const fetchPlayersBasic = () => async dispatch => {
+  const res = await axios.get("/api/playersbasic");
+  dispatch({ type: FETCH_PLAYERS_BASIC, payload: res.data });
 };
 
 export const fetchPlayer = playerId => async dispatch => {
