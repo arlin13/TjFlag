@@ -14,7 +14,11 @@ class TeamForm extends Component {
   }
 
   onChange(playerName, event) {
-    console.log("onclick test from player: " + playerName);
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+    var isChecked = value === true ? " was checked" : " was unchecked";
+    console.log("onclick test from player: " + playerName + isChecked);
   }
 
   renderFields() {
