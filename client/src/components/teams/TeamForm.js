@@ -13,6 +13,10 @@ class TeamForm extends Component {
     this.props.fetchPlayersBasic();
   }
 
+  onChange(playerName, event) {
+    console.log("onclick test from player: " + playerName);
+  }
+
   renderFields() {
     return _.map(formFields, ({ label, name }) => {
       return (
@@ -31,14 +35,17 @@ class TeamForm extends Component {
     return this.props.players.map(player => {
       return (
         <div key={player._id} className="col s6 l3">
-          <p>
-            <label>
-              <input type="checkbox" />
-              <span>
-                {player.name} {player.lastName}
-              </span>
-            </label>
-          </p>
+          <label>
+            <input
+              name="isGoing"
+              type="checkbox"
+              onChange={this.onChange.bind(this, player.name)}
+            />
+            <span>
+              {player.name} {player.lastName}
+            </span>
+          </label>
+          <br />
         </div>
       );
     });
