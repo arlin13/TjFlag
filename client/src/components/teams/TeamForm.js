@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, formValueSelector } from "redux-form";
 import TeamField from "./TeamField";
 import { Link } from "react-router-dom";
 import formFields from "./formFields";
@@ -9,16 +9,32 @@ import { fetchPlayersBasic } from "../../actions";
 import "../../style/index.css";
 
 class TeamForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedPlayers: []
+    };
+    this.addPlayer = this.addPlayer.bind(this);
+  }
+
   componentDidMount() {
     this.props.fetchPlayersBasic();
   }
 
-  onChange(playerName, event) {
+  onChange(player, event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     var isChecked = value === true ? " was checked" : " was unchecked";
-    console.log("onclick test from player: " + playerName + isChecked);
+    console.log("onclick test from player: " + player.name + isChecked);
+
+    this.addPlayer(player);
+  }
+
+  addPlayer(player) {
+    this.setState({ selectedPlayers: [...this.state.selectedPlayers, player] });
+    console.log("Jugadores seleccionados: ");
+    console.log(this.state.selectedPlayers);
   }
 
   renderFields() {
@@ -41,9 +57,9 @@ class TeamForm extends Component {
         <div key={player._id} className="col s6 l3">
           <label>
             <input
-              name="isGoing"
+              name={player._id}
               type="checkbox"
-              onChange={this.onChange.bind(this, player.name)}
+              onChange={this.onChange.bind(this, player)}
             />
             <span>
               {player.name} {player.lastName}
@@ -107,9 +123,3 @@ export default reduxForm({
   form: "teamForm",
   destroyOnUnmount: false
 })(TeamForm);
-
-// export default reduxForm({
-//   validate,
-//   form: "teamForm",
-//   destroyOnUnmount: false
-// })(TeamForm);
