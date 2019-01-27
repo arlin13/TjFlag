@@ -7,13 +7,18 @@ import * as actions from "../../actions";
 import "../../style/index.css";
 
 const TeamFormReview = ({ onCancel, formValues, submitTeam, history }) => {
+  console.log(formValues);
   const reviewFields = _.map(formFields, ({ name, label }) => {
     return (
       <div key={name}>
         <label>{label}</label>
-        <div>{formValues[name]}</div>
+        {renderValues}
       </div>
     );
+  });
+
+  const renderValues = _.map(formValues, ({ name }) => {
+    return <div>{Object.values(formValues)}</div>;
   });
 
   return (
@@ -37,9 +42,6 @@ const TeamFormReview = ({ onCancel, formValues, submitTeam, history }) => {
 };
 
 function mapStateToProps(state) {
-  console.log("mapStateToProps");
-  console.log(state);
-  console.log(state.form.teamForm.values);
   return {
     formValues: state.form.teamForm.values
   };

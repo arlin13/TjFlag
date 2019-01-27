@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import { reduxForm, Field, formValueSelector } from "redux-form";
+import { reduxForm, Field } from "redux-form";
 import TeamField from "./TeamField";
 import { Link } from "react-router-dom";
 import formFields from "./formFields";
@@ -9,12 +9,14 @@ import { fetchPlayersBasic } from "../../actions";
 import "../../style/index.css";
 
 class TeamForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      filteredPlayers: [],
       selectedPlayers: []
     };
     this.addPlayer = this.addPlayer.bind(this);
+    this.removePlayer = this.removePlayer.bind(this);
   }
 
   componentDidMount() {
@@ -24,17 +26,23 @@ class TeamForm extends Component {
   onChange(player, event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
-    var isChecked = value === true ? " was checked" : " was unchecked";
-    console.log("onclick test from player: " + player.name + isChecked);
 
-    this.addPlayer(player);
+    if (value) {
+      this.addPlayer(player);
+    } else {
+      this.removePlayer(player);
+    }
   }
 
   addPlayer(player) {
-    this.setState({ selectedPlayers: [...this.state.selectedPlayers, player] });
-    console.log("Jugadores seleccionados: ");
-    console.log(this.state.selectedPlayers);
+    // console.log(this.props._reduxForm);
+    this.state.selectedPlayers = [...this.state.selectedPlayers, player];
+  }
+
+  removePlayer(player) {
+    this.state.selectedPlayers = this.state.selectedPlayers.filter(function(p) {
+      return p._id !== player._id;
+    });
   }
 
   renderFields() {
@@ -71,10 +79,19 @@ class TeamForm extends Component {
     });
   }
 
+  dumbSubmit(values) {
+    const { onTeamSubmit } = this.props;
+    values.players = this.state.selectedPlayers;
+    onTeamSubmit(values, 12345);
+  }
+
+  // <form onSubmit={ handleSubmit(this.dumbSubmit.bind(this)) }>
+  // <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
+
   render() {
     return (
       <div className="row top-bottom-margin">
-        <form onSubmit={this.props.handleSubmit(this.props.onTeamSubmit)}>
+        <form onSubmit={this.props.handleSubmit(this.dumbSubmit.bind(this))}>
           {this.renderFields()}
           <label>Jugadores</label>
           <div id="playerListDiv" className="row">
