@@ -8,9 +8,9 @@ const playerSchema = new Schema({
   dateOfBirth: Date,
   sex: String,
   number: Number,
-  _division: { type: Schema.Types.ObjectId, ref: "Division" },
+  division: String,
   isActive: Boolean,
-  teams: [TeamSchema]
+  teams: [{}]
 });
 
 mongoose.model("players", playerSchema);

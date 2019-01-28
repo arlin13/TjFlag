@@ -7,7 +7,8 @@ const teamSchema = new Schema({
   category: String,
   mode: String,
   division: String,
-  coach: String
+  coach: String,
+  players: [{}]
 });
 
 mongoose.model("teams", teamSchema);

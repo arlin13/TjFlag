@@ -22,7 +22,7 @@ module.exports = app => {
   });
 
   app.post("/api/teams", requireLogin, async (req, res) => {
-    const { name, city, category, mode, division, coach } = req.body;
+    const { name, city, category, mode, division, coach, players } = req.body;
 
     const team = new Team({
       name,
@@ -30,11 +30,13 @@ module.exports = app => {
       category,
       mode,
       division,
-      coach
+      coach,
+      players
     });
 
     try {
       await team.save();
+      console.log(team);
       res.send(team);
     } catch (e) {
       res.status(422).send(err);

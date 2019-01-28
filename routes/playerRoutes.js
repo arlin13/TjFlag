@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Path = require("path-parser").default;
 const requireLogin = require("../middlewares/requireLogin");
-
+const ObjectId = require("mongodb").ObjectID;
 const Player = mongoose.model("players");
 
 module.exports = app => {
@@ -25,7 +25,15 @@ module.exports = app => {
   });
 
   app.post("/api/players", requireLogin, async (req, res) => {
-    const { name, lastName, dateOfBirth, sex, number, _division } = req.body;
+    const {
+      name,
+      lastName,
+      dateOfBirth,
+      sex,
+      number,
+      _division,
+      teams
+    } = req.body;
 
     const player = new Player({
       name,
@@ -33,7 +41,8 @@ module.exports = app => {
       dateOfBirth,
       sex,
       number,
-      _division
+      _division,
+      teams
     });
 
     try {
@@ -41,6 +50,27 @@ module.exports = app => {
       res.send(player);
     } catch (e) {
       res.status(422).send(err);
+    }
+  });
+
+  app.put("/api/updateplayer", requireLogin, async (req, res) => {
+    const updatedPlayer = req.body;
+    const player = await Player.findById(req.body._id.$oid);
+
+    player.name = updatedPlayer.name;
+    player.lastName = updatedPlayer.lastName;
+    player.dateOfBirth = updatedPlayer.dateOfBirth;
+    player.sex = updatedPlayer.sex;
+    player.number = updatedPlayer.number;
+    player.division = updatedPlayer.division;
+    player.isActive = updatedPlayer.isActive;
+    player.teams = updatedPlayer.teams;
+
+    try {
+      player.save();
+      res.send(player);
+    } catch (e) {
+      res.status(422).send(e);
     }
   });
 };
